@@ -12,7 +12,7 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.svm import SVC
 from sklearn.naive_bayes import MultinomialNB
 import sys
-path = '/Users/mdunford/data_science/fake-news-predictor/src'
+path = '../src'
 if path not in sys.path:
     sys.path.append(path)
 from string_process import string_process
@@ -23,8 +23,8 @@ logging.basicConfig(level=logging.INFO)
 
 # The training data is in two files so I label and concatenate
 def import_data():
-    fake = pd.read_csv('/Users/mdunford/data_science/fake-news-predictor/data/Fake.csv')
-    true = pd.read_csv('/Users/mdunford/data_science/fake-news-predictor/data/True.csv')
+    fake = pd.read_csv('../data/Fake.csv')
+    true = pd.read_csv('../data/True.csv')
     true['class'] = 0
     fake['class'] = 1
     data = pd.concat([true, fake])
